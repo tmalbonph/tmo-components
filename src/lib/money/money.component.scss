@@ -1,0 +1,49 @@
+.tmo-money {
+  font-family: 'Arial-regular', sans-serif;
+
+  retail-wrapper {
+    margin: 0 5px;
+  }
+
+  &.decimal-hidden {
+    font-size: 1px;
+    opacity: 0;
+  }
+
+  &.cents-super,
+  &.dollar-sign-super {
+    font-size: 55%;
+    position: relative;
+    vertical-align: super;
+  }
+
+  &-large {
+    font-size: 1.75rem;
+
+    &.cents-super,
+    &.dollar-sign-super {
+      font-size: 0.95rem;
+      top: -4px;
+    }
+  }
+
+  &-medium {
+    font-size: 24px;
+
+    &.cents-super,
+    &.dollar-sign-super {
+      font-size: 0.752rem;
+      top: -1px;
+    }
+  }
+
+  &-small {
+    font-size: 16px;
+
+    &.cents-super,
+    &.dollar-sign-super {
+      font-size: 0.58rem;
+      top: 1px;
+    }
+  }
+}

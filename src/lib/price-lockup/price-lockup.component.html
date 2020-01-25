@@ -1,0 +1,123 @@
+<div class="spacer-h-m"></div>
+<div class="price-lockup-wrapper">
+  <div class="price-lockup" [ngClass]="sizeClass">
+    <div class="cost-wrapper">
+      <div
+        class="cost"
+        [ngClass]="{
+          'discount-cost': getShowAsDiscount(),
+          'text-magenta': getLeftMagenta()
+        }"
+      >
+        <tmo-money
+          [ngClass]="{ 'text-strike-through': getShowAsDiscount() }"
+          [spinThePrice]="'spin'"
+          [symbolClass]="'dollar-sign'"
+          [dollarClass]="'dollars'"
+          [decimalClass]="'decimal-hidden'"
+          [decimalSeparator]="decimalSeparator"
+          [pennyClass]="'cents'"
+          [price]="leftAmount"
+        >
+        </tmo-money>
+        <div class="clearfix"></div>
+        <span
+          [attr.aria-label]="[leftText]"
+          class="cost-header
+              body--bold"
+          [innerHTML]="leftText"
+        ></span>
+        <span
+          [attr.aria-label]="'{leftSubText}.'"
+          class="cost-sub-header
+              legal"
+          *ngIf="leftSubText"
+          [innerHTML]="leftSubText"
+        ></span>
+      </div>
+      <div
+        class="cost-divider"
+        [attr.aria-label]="'/.'"
+        [ngClass]="{ 'text-magenta': getLeftMagenta() }"
+        *ngIf="!getLeftOnly() || getShowAsDiscount()"
+      >
+        /
+      </div>
+      <div class="cost" *ngIf="!getLeftOnly()">
+        <tmo-money
+          [price]="rightAmount"
+          [spinThePrice]="'spin'"
+          [symbolClass]="'dollar-sign'"
+          [dollarClass]="'dollars'"
+          [decimalClass]="'decimal-hidden'"
+          [decimalSeparator]="decimalSeparator"
+          [pennyClass]="'cents'"
+        >
+        </tmo-money>
+        <span [attr.aria-label]="[rightText]" class="cost-header body--bold" [innerHTML]="rightText"></span>
+        <span
+          [attr.aria-label]="'{rightSubText}.'"
+          class="cost-sub-header legal"
+          *ngIf="rightSubText"
+          [innerHTML]="rightSubText"
+        ></span>
+        <span class="cost-sub-header legal">
+          <span
+            *ngIf="autoPayOn === 'true'"
+            [attr.aria-label]="'rightAutoPayStartingText'"
+            [innerHTML]="rightAutoPayStartingText"
+          ></span>
+          <span
+            *ngIf="autoPayDiscount && autoPayOn === 'true'"
+            [attr.aria-label]="'autoPayDiscount'"
+            [innerHTML]="autoPayDiscount"
+          ></span>
+          <span
+            *ngIf="autoPayOn === 'true'"
+            [attr.aria-label]="'{rightAutoPayText}.'"
+            [innerHTML]="rightAutoPayText"
+          ></span>
+          <span [attr.aria-label]="'{rightTaxText}.'" [innerHTML]="rightTaxText"></span>
+        </span>
+        <span
+          [attr.aria-label]="'{hybridBanSubText}.'"
+          class="cost-sub-header legal"
+          *ngIf="hybridBanFlag"
+          [innerHTML]="hybridBanSubText"
+        ></span>
+      </div>
+    </div>
+  </div>
+  <div id="legalTerms" *ngIf="legalTermsText" [ngClass]="{ 'display-none-sm': showlegalTermsMobile() }">
+    <p class="legal width-160 text-gray p-t-5 p-b-10" [innerHTML]="legalTermsText"></p>
+  </div>
+  <div *ngIf="getShowTotalPricing()" class="retail-wrapper border-top" [ngClass]="sizeClass">
+    <span class="retail-text">{{ totalPriceText }}</span>
+    <div class="no-wrapping">
+      <span class="m-r-5" [hidden]="getTotalPriceOnly()">
+        <span class="sr-only">Was:</span>
+        <tmo-money
+          class="space-around"
+          [price]="totalOriginalPrice"
+          [symbolClass]="'unstyled dollar-sign'"
+          [dollarClass]="'dollars text-strike-through'"
+          [decimalClass]="'decimal-hidden'"
+          [decimalSeparator]="decimalSeparator"
+          [pennyClass]="'align-top cents text-strike-through'"
+        >
+        </tmo-money>
+      </span>
+      <span [hidden]="getTotalPriceOnly()" class="sr-only">Now:</span>
+      <tmo-money
+        class="space-around"
+        [symbolClass]="'unstyled dollar-sign'"
+        [dollarClass]="'dollars'"
+        [decimalClass]="'decimal-hidden'"
+        [decimalSeparator]="decimalSeparator"
+        [pennyClass]="'align-top cents'"
+        [price]="totalPrice"
+      >
+      </tmo-money>
+    </div>
+  </div>
+</div>

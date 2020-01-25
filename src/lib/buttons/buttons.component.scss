@@ -1,0 +1,282 @@
+/*
+* CSS variables used throughout TMO apps.
+* Contains colors and other constants.
+* To prevent duplicated compiled CSS,
+* do NOT include functions/classes in this file.
+*
+* Hex values are directly based on T-Mo theme palettes.
+*/
+.button--standard {
+  border-radius: 0;
+  line-height: 46px;
+}
+
+.button--small {
+  border-radius: 0;
+  line-height: 30px;
+}
+
+.button--full-width {
+  width: 100%;
+}
+
+.mat-button.button--raised:not([disabled]) .mat-button-focus-overlay {
+  background-color: transparent;
+  font-size: 15px;
+}
+
+.button--raised:not([disabled]):hover {
+  transition: all 0.5s ease-in;
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button--raised:not([disabled]):not([hover]) {
+  transition: all 0.5s ease-out;
+  color: #ffffff;
+}
+
+.button--raised:not([disabled]):focus {
+  transition: all 0.5s ease-in;
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mat-button:not([disabled]):focus {
+  text-decoration: underline;
+}
+
+.button--alternate.mat-button {
+  background-color: #000000;
+  color: #ffffff;
+}
+.button--alternate.mat-button:hover {
+  color: #ffffff;
+  background-color: #262626;
+}
+.button--alternate.mat-button:focus {
+  text-decoration: underline;
+  color: #ffffff;
+  background-color: #262626;
+}
+
+.mat-raised-button:disabled,
+.mat-flat-button:disabled,
+.mat-button:disabled {
+  background-color: #6a6a6a !important;
+  color: #f8f8f8 !important;
+  cursor: not-allowed;
+}
+
+.tmo-dark-theme .button--alternate.mat-button:not([disabled]) {
+  background-color: #ffffff;
+  color: #000000;
+}
+.tmo-dark-theme .button--alternate.mat-button:not([disabled]):hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+.tmo-dark-theme .button--alternate.mat-button:not([disabled]):focus {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.tmo-dark-theme .mat-raised-button:disabled,
+.tmo-dark-theme .mat-flat-button:disabled,
+.tmo-dark-theme .mat-button:disabled {
+  background-color: #cccccc !important;
+  color: #4c4c4c !important;
+}
+
+.button--secondary,
+.button--secondary.mat-button {
+  border: 1px solid;
+  color: #e20074;
+}
+.button--secondary:not([disabled]):hover,
+.button--secondary.mat-button:not([disabled]):hover {
+  background-color: #ffffff;
+  outline: 1px solid #e20074;
+  color: #a10053;
+}
+.button--secondary:not([disabled]):focus,
+.button--secondary.mat-button:not([disabled]):focus {
+  background-color: #ffffff;
+  outline: 1px solid #e20074;
+  color: #a10053;
+  text-decoration: underline;
+}
+
+.button--secondary__alternate,
+.button--secondary__alternate.mat-button {
+  border: 1px solid #000000;
+  color: #000000;
+}
+.button--secondary__alternate:not([disabled]):hover,
+.button--secondary__alternate.mat-button:not([disabled]):hover {
+  outline: 1px solid;
+  color: #333333;
+}
+.button--secondary__alternate:not([disabled]):focus,
+.button--secondary__alternate.mat-button:not([disabled]):focus {
+  outline: 1px solid;
+  color: #333333;
+  text-decoration: underline;
+}
+
+.button--secondary.mat-button:disabled,
+.button--secondary__alternate.mat-button:disabled {
+  background-color: transparent !important;
+  border-color: #6a6a6a !important;
+  color: #6a6a6a !important;
+}
+
+.tmo-dark-theme .button--secondary,
+.tmo-dark-theme .button--secondary.mat-button {
+  border: 1px solid;
+  color: #f6b3d5;
+}
+.tmo-dark-theme .button--secondary:not([disabled]):hover,
+.tmo-dark-theme .button--secondary.mat-button:not([disabled]):hover {
+  outline: 1px solid #f6b3d5;
+  color: #f6b3d5;
+}
+.tmo-dark-theme .button--secondary:not([disabled]):focus,
+.tmo-dark-theme .button--secondary.mat-button:not([disabled]):focus {
+  outline: 1px solid #f6b3d5;
+  color: #f6b3d5;
+  text-decoration: underline;
+}
+
+.tmo-dark-theme .button--secondary__alternate,
+.tmo-dark-theme .button--secondary__alternate.mat-button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+.tmo-dark-theme .button--secondary__alternate:not([disabled]):hover,
+.tmo-dark-theme .button--secondary__alternate.mat-button:not([disabled]):hover {
+  outline: 1px solid #ffffff;
+  color: #ffffff;
+}
+.tmo-dark-theme .button--secondary__alternate:not([disabled]):focus,
+.tmo-dark-theme .button--secondary__alternate.mat-button:not([disabled]):focus {
+  outline: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.tmo-dark-theme .button--secondary.mat-button:disabled,
+.tmo-dark-theme .button--secondary__alternate.mat-button:disabled {
+  background-color: transparent !important;
+  border-color: #cccccc !important;
+  color: #cccccc !important;
+}
+
+.button--tertiary,
+.button--tertiary.mat-button {
+  color: #e20074;
+}
+.button--tertiary:not([disabled]):hover,
+.button--tertiary.mat-button:not([disabled]):hover {
+  color: #a10053;
+}
+.button--tertiary:not([disabled]):focus,
+.button--tertiary.mat-button:not([disabled]):focus {
+  color: #a10053;
+  text-decoration: underline;
+}
+
+.button--tertiary__alternate,
+.button--tertiary__alternate.mat-button {
+  color: #000000;
+}
+.button--tertiary__alternate:not([disabled]):hover,
+.button--tertiary__alternate.mat-button:not([disabled]):hover {
+  color: #333333;
+}
+.button--tertiary__alternate:not([disabled]):focus,
+.button--tertiary__alternate.mat-button:not([disabled]):focus {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.button--tertiary.mat-button:disabled,
+.button--tertiary__alternate.mat-button:disabled {
+  background-color: #ffffff !important;
+  color: #6a6a6a !important;
+  cursor: not-allowed;
+}
+
+.tmo-dark-theme .button--tertiary,
+.tmo-dark-theme .button--tertiary.mat-button {
+  color: #f6b3d5;
+}
+.tmo-dark-theme .button--tertiary:not([disabled]):hover,
+.tmo-dark-theme .button--tertiary.mat-button:not([disabled]):hover {
+  color: #f6b3d5;
+}
+.tmo-dark-theme .button--tertiary:not([disabled]):focus,
+.tmo-dark-theme .button--tertiary.mat-button:not([disabled]):focus {
+  color: #f6b3d5;
+  text-decoration: underline;
+}
+
+.tmo-dark-theme .button--tertiary__alternate,
+.tmo-dark-theme .button--tertiary__alternate.mat-button {
+  color: #ffffff;
+}
+.tmo-dark-theme .button--tertiary__alternate:not([disabled]):hover,
+.tmo-dark-theme .button--tertiary__alternate.mat-button:not([disabled]):hover {
+  color: #ffffff;
+}
+.tmo-dark-theme .button--tertiary__alternate:not([disabled]):focus,
+.tmo-dark-theme .button--tertiary__alternate.mat-button:not([disabled]):focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.tmo-dark-theme .button--tertiary.mat-button:disabled,
+.tmo-dark-theme .button--tertiary__alternate.mat-button:disabled {
+  background-color: #000000 !important;
+  color: #cccccc !important;
+}
+
+.hyperlink {
+  color: #000000;
+}
+.hyperlink:not([disabled]) {
+  text-decoration: underline;
+}
+.hyperlink:not([disabled]):hover {
+  color: #4c4c4c;
+}
+.hyperlink:not([disabled]):focus {
+  color: #4c4c4c;
+}
+.hyperlink:not([disabled]):active {
+  color: #000000;
+}
+.hyperlink:disabled {
+  color: #6a6a6a;
+  cursor: not-allowed;
+}
+
+.tmo-dark-theme .hyperlink {
+  color: #ffffff;
+}
+.tmo-dark-theme .hyperlink:not([disabled]) {
+  text-decoration: underline;
+}
+.tmo-dark-theme .hyperlink:not([disabled]):hover {
+  color: #ffffff;
+}
+.tmo-dark-theme .hyperlink:not([disabled]):focus {
+  color: #ffffff;
+}
+.tmo-dark-theme .hyperlink:not([disabled]):active {
+  color: #ffffff;
+}
+.tmo-dark-theme .hyperlink:disabled {
+  color: #6a6a6a;
+  cursor: not-allowed;
+}

@@ -1,0 +1,49 @@
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ * @param target Which kind of high contrast setting to target. Defaults to `active`, can be
+ *    `white-on-black` or `black-on-white`.
+ */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.alert {
+  display: block;
+  height: 3.4rem;
+  padding: 1rem;
+  z-index: 5;
+  /*
+      * need to hard-code color hex bc material doesn't support getting
+      * current theme dynamically for custom stand-alone components
+      */
+}
+.alert.critical {
+  background-color: #e8200d;
+  color: white;
+}
+.alert.warning {
+  background-color: #e3b721;
+}
+.alert .headline {
+  padding: 0 0.25rem 0 0;
+}
+.alert .cursor {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  .alert {
+    height: 3.312rem;
+    padding: 0.5rem 1rem;
+  }
+  .copy {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .alert {
+    height: 5.875rem;
+  }
+}

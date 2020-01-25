@@ -1,0 +1,19 @@
+<span [attr.aria-describedby]="'money_[1]'" [ngClass]="{ 'text-strike-through': getStrikeThrough() }">
+  <span id="money_{{ 1 }}" class="sr-only">{{ displayPrice }};</span>
+  <span aria-hidden="true" [ngClass]="symbolClass">{{ formattedPrice[0] }}</span>
+  <span
+    aria-hidden="true"
+    price-odometer="spinThePrice"
+    [attr.price-to-spin]="'formattedPrice[1]'"
+    [ngClass]="dollarClass"
+    >{{ formattedPrice[1] }}</span
+  >
+  <span aria-hidden="true" [ngClass]="decimalClass">{{ decimalSeparator }}</span>
+  <span
+    aria-hidden="true"
+    price-odometer="spinThePrice"
+    [attr.price-to-spin]="'formattedPrice[2]'"
+    [ngClass]="pennyClass"
+    >{{ formattedPrice[2] }}</span
+  >
+</span>

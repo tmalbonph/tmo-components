@@ -1,0 +1,429 @@
+$tablet-max: 1008px;
+$mobile-max: 640px;
+$mobile-min: 320px;
+
+$tmo-magenta: #e20074;
+$tmo-gray60: #6a6a6a;
+$tmo-gray85: #262626;
+
+@mixin break-max($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin break-min($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+.text-magenta {
+  color: $tmo-magenta;
+}
+
+.cents,
+.dollars {
+  &.text-strike-through {
+    text-decoration: line-through;
+    .odometer-value {
+      text-decoration: line-through;
+    }
+  }
+}
+.space-around {
+  padding: 0 3px;
+}
+
+.unstyled.dollar-sign {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.clearfix {
+  display: block;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Price Lockup
+.price-lockup {
+  .cost-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: $tmo-gray85;
+    padding: 0;
+    line-height: 1em;
+    white-space: normal;
+
+    .cost,
+    .cost-divider {
+      display: flex;
+      flex-direction: column;
+    }
+
+    sup {
+      font-size: 55%;
+      vertical-align: super;
+      top: 0;
+    }
+
+    .cents,
+    .dollar-sign {
+      top: -0.4em;
+      font-size: 55%;
+      position: relative;
+      vertical-align: text-top;
+
+      &.unstyled {
+        font-size: 100%;
+        vertical-align: baseline;
+      }
+    }
+
+    .discount-cost {
+      .text-strike-through {
+        .cents,
+        .dollars {
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .cost-header,
+    .cost-sub-header {
+      display: block;
+      text-align: center;
+
+      &.legal {
+        font-weight: normal;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .text-strike-through {
+    text-decoration: line-through;
+    .odometer-value {
+      text-decoration: line-through;
+    }
+  }
+
+  &.price-lockup-xl {
+    font-size: 60px;
+
+    .cost-wrapper {
+      .cost,
+      .cost-divider {
+        margin-right: 10px;
+      }
+
+      .cost-header {
+        margin-top: -17px;
+      }
+    }
+
+    @include break-max($tablet-max) {
+      font-size: 40px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 7px;
+        }
+
+        .cost-header {
+          margin-top: -9px;
+        }
+      }
+    }
+
+    @include break-max($mobile-max) {
+      font-size: 32px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 4px;
+        }
+
+        .cost-header {
+          margin-top: -6px;
+        }
+      }
+    }
+
+    @include break-max($mobile-min) {
+      font-size: 26px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 3px;
+        }
+
+        .cost-header {
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+
+  &.price-lockup-large {
+    font-size: 40px;
+
+    .cost-wrapper {
+      .cost,
+      .cost-divider {
+        margin-right: 7px;
+      }
+
+      .cost-header {
+        margin-top: -9px;
+      }
+    }
+
+    /* .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+       line-height: 40px;
+     }*/
+
+    @include break-max($tablet-max) {
+      font-size: 32px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 4px;
+        }
+
+        .cost-header {
+          margin-top: -6px;
+        }
+      }
+    }
+
+    @include break-max($mobile-max) {
+      font-size: 26px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 3px;
+        }
+
+        .cost-header {
+          margin-top: -4px;
+        }
+      }
+    }
+
+    @include break-max($mobile-min) {
+      font-size: 24px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 3px;
+        }
+
+        .cost-header {
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+
+  &.price-lockup-medium {
+    font-size: 32px;
+
+    .cost-wrapper {
+      .cost,
+      .cost-divider {
+        margin-right: 6px;
+      }
+
+      .cost-header {
+        margin-top: -6px;
+      }
+    }
+
+    @include break-max($tablet-max) {
+      font-size: 26px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 3px;
+        }
+
+        .cost-header {
+          margin-top: -4px;
+        }
+      }
+    }
+
+    @include break-max($mobile-max) {
+      font-size: 24px;
+
+      .cost-wrapper {
+        .cost,
+        .cost-divider {
+          margin-right: 3px;
+        }
+
+        .cost-header {
+          margin-top: -4px;
+        }
+      }
+    }
+
+    .cost-wrapper {
+      padding: 0;
+    }
+  }
+
+  &.price-lockup-small {
+    font-size: 26px;
+
+    @include break-max($tablet-max) {
+      font-size: 24px;
+    }
+
+    .cost-wrapper {
+      .cost,
+      .cost-divider {
+        margin-right: 3px;
+      }
+
+      .cost-header {
+        margin-top: -4px;
+      }
+    }
+  }
+
+  &.price-lockup-xsmall {
+    font-size: 24px;
+
+    .cost-wrapper {
+      .cost,
+      .cost-divider {
+        margin-right: 3px;
+      }
+
+      .cost-header {
+        margin-top: -4px;
+      }
+    }
+  }
+
+  &.price-lockup-xxs {
+    font-size: 22px;
+
+    .cost-wrapper {
+      .cost,
+      .cost-divider {
+        margin-right: 3px;
+      }
+
+      .cost-header {
+        margin-top: -4px;
+      }
+    }
+  }
+}
+
+.price-lockup-wrapper {
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+
+  .retail-wrapper {
+    color: $tmo-gray60;
+    margin: 4px 0 0 0;
+
+    .text-strike-through {
+      padding: 0 15px 0 0;
+    }
+
+    &.border-top,
+    &.border.top {
+      border-top: 1px solid rgb(221, 221, 221);
+      margin: 3px 0 0 0;
+    }
+
+    @include break-min($tablet-max) {
+      &.price-lockup-xl {
+        padding-top: 20px;
+        font-size: 30px;
+
+        .retail-text {
+          font-size: 27px;
+        }
+
+        .cents {
+          top: 0.2em;
+        }
+      }
+    }
+
+    padding: 10px 10px 0;
+    font-size: 16px;
+
+    .retail-text {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .cents {
+      top: -0.3em;
+      font-size: 55%;
+      position: relative;
+      vertical-align: text-top;
+    }
+
+    .dollar-sign {
+      top: 0;
+      font-size: 100%;
+      position: relative;
+      vertical-align: baseline;
+    }
+  }
+}
+
+.no-wrapping {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.decimal-hidden {
+  font-size: 1px;
+  opacity: 0;
+}
+
+.cents,
+.dollar-sign {
+  font-size: 55%;
+  position: relative;
+  vertical-align: super;
+}

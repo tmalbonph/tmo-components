@@ -1,0 +1,19 @@
+.divider {
+  display: block;
+  margin: 0;
+  border-top-style: solid;
+
+  &.full-bleed {
+    border-top-color: gray;
+    border-top-width: 6px;
+  }
+
+  &.inset {
+    border-top-color: #f8f8f8;
+    border-top-width: 1px;
+  }
+
+  &.total {
+    border-top-width: 3px;
+  }
+}
